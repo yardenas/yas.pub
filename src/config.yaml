@@ -9,7 +9,7 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Yarde As
+    default: Yarden As
     template: '%s — AstroWind'
   description: 'My place in the internet. All Robots are Welcome.'
   robots:
