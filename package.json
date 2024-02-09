@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier -w .",
-    "lint:eslint": "eslint . --ext .js,.ts,.astro"
+    "lint:eslint": "eslint . --ext .js,.ts,.astro",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.4",
@@ -39,6 +40,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-astro": "^0.31.3",
     "eslint-plugin-jsx-a11y": "^6.8.0",
+    "husky": "^9.0.10",
     "js-yaml": "^4.1.0",
     "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.2.4",
