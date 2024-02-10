@@ -4,8 +4,8 @@ export const headerData = {};
 export const footerData = {
   secondaryLinks: [],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://twitter.com/yarden_as' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/yardenas/' },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
     {
       ariaLabel: 'Google Scholar',
