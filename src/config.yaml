@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: Yarden As
-    template: '%s — AstroWind'
+    template: '%s — Yarden As'
   description: 'My place in the Internet. All Robots are Welcome.'
   robots:
     index: true
