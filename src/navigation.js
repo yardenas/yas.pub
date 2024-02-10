@@ -20,6 +20,6 @@ export const footerData = {
   ],
   footNote: `
     <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm"></span>
-    Made by <a href="${getHomePermalink()}" class="a-link">Yarden As</a> · Feel Free to use the  <a class="a-link" href="https://github.com/yardenas/yas.pub">Open Source Code</a>
+    Made by <a href="${getHomePermalink()}" class="a-link">Yarden As</a> · Feel Free to use the  <a class="a-link" href="https://github.com/yardenas/yas.pub">Open Source Code</a> for this website.
   `,
 };
