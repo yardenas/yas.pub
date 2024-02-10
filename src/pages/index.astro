@@ -22,13 +22,23 @@ const metadata = {
   </Fragment>
   <Hero image={{ src: '~/assets/images/hero.png', alt: 'Yasos!' }}>
     <Fragment slot="title"> Yarden As </Fragment>
-    <Fragment slot="subtitle"> [ y ah r Den ] </Fragment>
+    <Fragment slot="subtitle"> [ y ah r Den ] <br /><span class="font-serif-heb text-2xl">ירדן</span> </Fragment>
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mt-6 mb-2">About me</h3>
+      <div class="flex flex-row gap-8 items-start mb-2">
+        <h3 class="text-2xl font-bold tracking-tight sm:text-3xl shrink-0">About me</h3>
+        <p class="w-fit">
+          I am a mechanical engineer who became a roboticist and now a researcher in machine learning (“AI”).
+        </p>
+      </div>
       <p class="first-letter:text-5xl first-letter:font-bold first-letter:me-1 first-letter:float-start">
-        <span class="after:content-['.'] font-bold">Academic</span> Asperiores voluptatibus quisquam et porro similique et
-        tenetur rerum. Aut aliquid illum et veniam. Nam quae consequatur tempore error natus nihil non. Delectus quia ratione
-        similique vel eos delectus odio. Debitis vel nemo cupiditate ducimus impedit non delectus. Rem in ullam est quia.
+        <span class="after:content-['.'] font-bold">Academic</span> I am a PhD student at the <a
+          class="a-link"
+          href="https://ai.ethz.ch/">ETH AI Center</a
+        > and <a class="a-link" href="https://las.inf.ethz.ch/">Learning and Adaptive Systems Group. </a> My research focuses
+        on sequential decision making under uncertainty and constraints. Specifically, I am trying to make <span
+          class="text-accent"><em>safe</em></span
+        > reinformcement learning algorithms work reliably in practice. More broadly, I am interested in uncertainty quantification,
+        Bayesian Optimization and Active Learning.
       </p>
       <br />
       <p class="first-letter:text-5xl first-letter:font-bold first-letter:me-1 first-letter:float-start">
