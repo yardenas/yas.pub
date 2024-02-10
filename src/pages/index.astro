@@ -16,13 +16,15 @@ const metadata = {
         { text: 'Blog', href: '#blog' },
         { text: 'CV', href: '#CV' },
       ]}
-      isSticky
       position="right"
     />
   </Fragment>
   <Hero image={{ src: '~/assets/images/hero.png', alt: 'Yasos!' }}>
-    <Fragment slot="title"> Yarden As </Fragment>
-    <Fragment slot="subtitle"> [ y ah r Den ] <br /><span class="font-serif-heb text-2xl">ירדן</span> </Fragment>
+    <Fragment slot="title"> <span class="font-mono">Yarden As </span></Fragment>
+    <Fragment slot="subtitle">
+      <span class="font-mono">[ y ah r Den ]</span>
+      <br /><span class="font-serif-heb text-2xl">ירדן</span>
+    </Fragment>
     <Fragment slot="content">
       <div class="flex flex-row gap-5 items-start mb-2">
         <h3 class="text-2xl font-bold tracking-tight sm:text-3xl shrink-0">About me</h3>
@@ -55,3 +57,9 @@ const metadata = {
     </Fragment>
   </Hero>
 </Layout>
+
+<style>
+  * {
+    font-family: var(--aw-font-mono);
+  }
+</style>
