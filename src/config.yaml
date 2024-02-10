@@ -11,7 +11,7 @@ metadata:
   title:
     default: Yarden As
     template: '%s — AstroWind'
-  description: 'My place in the internet. All Robots are Welcome.'
+  description: 'My place in the Internet. All Robots are Welcome.'
   robots:
     index: true
     follow: true
