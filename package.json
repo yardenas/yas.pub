@@ -1,6 +1,6 @@
 {
-  "name": "@onwidget/astrowind",
-  "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
+  "name": "yardenas",
+  "description": "Yarden As -- Personal Website",
   "version": "1.0.0-beta.17",
   "private": true,
   "scripts": {

@@ -19,13 +19,15 @@ const { metadata } = Astro.props;
   <slot name="announcement">
     <Announcement />
   </slot>
-  <slot name="header">
-    <Header {...headerData} isSticky showToggleTheme />
-  </slot>
-  <main>
-    <slot />
-  </main>
-  <slot name="footer">
-    <Footer {...footerData} />
-  </slot>
+  <div class="mx-auto max-w-5xl">
+    <slot name="header">
+      <Header {...headerData} isSticky showToggleTheme />
+    </slot>
+    <main>
+      <slot />
+    </main>
+    <slot name="footer">
+      <Footer {...footerData} />
+    </slot>
+  </div>
 </Layout>
