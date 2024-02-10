@@ -40,6 +40,7 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
+        academicons: ['*'],
         'flat-color-icons': [
           'template',
           'gallery',

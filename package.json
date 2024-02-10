@@ -30,6 +30,7 @@
     "@astrojs/mdx": "^2.1.0",
     "@astrojs/partytown": "^2.0.4",
     "@astrojs/tailwind": "5.1.0",
+    "@iconify-json/academicons": "^1.1.14",
     "@iconify-json/flat-color-icons": "^1.1.10",
     "@iconify-json/tabler": "^1.1.104",
     "@tailwindcss/typography": "^0.5.10",
