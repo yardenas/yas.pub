@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+}
 @layer utilities {
+  .a-link {
+    @apply hover:underline text-primary;
+  }
   .bg-page {
     background-color: var(--aw-color-bg-page);
   }
