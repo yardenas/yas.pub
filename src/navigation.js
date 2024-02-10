@@ -1,8 +1,8 @@
-import { getHomePermalink, getBlogPermalink } from '~/utils/permalinks';
+import { getHomePermalink, getPermalink } from '~/utils/permalinks';
 export const headerData = {
   links: [
-    { text: 'Academic Blog', href: getBlogPermalink() },
     { text: 'CV', href: '/pdf/yarden-as-2022.pdf' },
+    { text: 'Papers', href: getPermalink('/papers') },
   ],
   position: 'right',
 };
