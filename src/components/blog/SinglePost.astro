@@ -46,7 +46,7 @@ const { Content } = post;
               </>
             )
           }
-          {post.readingTime && <> · {post.readingTime} min read</>}
+          {post.readingTime !== 0 && <> · {post.readingTime} min read</>}
         </p>
       </div>
 
