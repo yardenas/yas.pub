@@ -17,18 +17,19 @@ const { publication } = Astro.props;
 const image = (await findImage(publication.image)) as ImageMetadata | undefined;
 ---
 
-<article class={`max-w-md mx-auto md:max-w-none flex flex-row gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>
+<article class={`max-w-md mx-auto md:max-w-none flex flex-row gap-6 md:gap-8`}>
   {
     image && (
-      <div class="bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
+      <div class="bg-gray-400 dark:bg-slate-700 rounded shadow-lg basis-[14.2857143%] hidden md:flex">
         {image && (
           <Image
             src={image}
             class="object-fill w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-            widths={[400, 128]}
-            width={128}
-            sizes="(max-width: 128px) 400px, 128px"
+            widths={[400, 900]}
+            width={900}
+            sizes="(max-width: 900px) 400px, 900px"
             alt={publication.title}
+            aspectRatio="16:9"
             loading="lazy"
             decoding="async"
           />
@@ -51,8 +52,7 @@ const image = (await findImage(publication.image)) as ImageMetadata | undefined;
                 · <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
                 {publication.authors.map((author, index) => (
                   <span class={`${author === 'Yarden As' ? 'font-bold' : ''}`}>
-                    {author}
-                    {index < publication.authors.length - 1 && ', '}
+                    {`${author}${index === publication.authors.length - 1 ? '' : ', '}`}
                   </span>
                 ))}
               </>
@@ -74,10 +74,7 @@ const image = (await findImage(publication.image)) as ImageMetadata | undefined;
       <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
         {
           publication.link ? (
-            <a
-              class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-              href={publication.link}
-            >
+            <a class="hover:text-primary transition ease-in duration-200" href={publication.link}>
               {publication.title}
             </a>
           ) : (
