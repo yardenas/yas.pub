@@ -3,6 +3,7 @@ export const headerData = {
   links: [
     { text: 'CV', href: '/pdf/yarden-as-2022.pdf' },
     { text: 'Papers', href: getPermalink('/papers') },
+    // { text: 'Publications', href: getBlogPermalink() },
   ],
   position: 'right',
 };
