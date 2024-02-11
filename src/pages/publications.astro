@@ -1,8 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import PublicationList from '~/components/publications/PublicationList.astro';
-import Headline from '~/components/blog/Headline.astro';
-import { getPublications } from '~/utils/publications';
+import { getPublications } from '~/utils/publication';
 
 const publications = await getPublications();
 
@@ -13,11 +12,6 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-      subtitle="A statically generated blog example with news, tutorials, resources and other interesting content related to AstroWind"
-    >
-      The Blog
-    </Headline>
     <PublicationList publications={publications} />
   </section>
 </Layout>

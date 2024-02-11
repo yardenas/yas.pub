@@ -17,26 +17,23 @@ const { publication } = Astro.props;
 const image = (await findImage(publication.image)) as ImageMetadata | undefined;
 ---
 
-<article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>
+<article class={`max-w-md mx-auto md:max-w-none flex flex-row gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>
   {
     image && (
-      <a class="relative block group" href={publication.link ?? 'javascript:void(0)'}>
-        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
-          {image && (
-            <Image
-              src={image}
-              class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-              widths={[400, 900]}
-              width={900}
-              sizes="(max-width: 900px) 400px, 900px"
-              alt={publication.title}
-              aspectRatio="16:9"
-              loading="lazy"
-              decoding="async"
-            />
-          )}
-        </div>
-      </a>
+      <div class="bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
+        {image && (
+          <Image
+            src={image}
+            class="object-fill w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+            widths={[400, 128]}
+            width={128}
+            sizes="(max-width: 128px) 400px, 128px"
+            alt={publication.title}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+      </div>
     )
   }
   <div class="mt-2">
