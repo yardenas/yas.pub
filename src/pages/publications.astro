@@ -2,14 +2,9 @@
 import Layout from '~/layouts/PageLayout.astro';
 import PublicationList from '~/components/publications/PublicationList.astro';
 import Headline from '~/components/blog/Headline.astro';
+import { getPublications } from '~/utils/publications';
 
-const publications = [
-  {
-    publishDate: new Date(2024, 2, 15),
-    title: 'Constrained Policy Optimization via Bayesian World Models',
-    authors: ['Yarden As'],
-  },
-];
+const publications = await getPublications();
 
 const metadata = {
   title: 'Publications',
