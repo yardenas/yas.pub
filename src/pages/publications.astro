@@ -1,7 +1,15 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import PublicationList from '~/components/publications/Publication.astro';
+import PublicationList from '~/components/publications/PublicationList.astro';
 import Headline from '~/components/blog/Headline.astro';
+
+const publications = [
+  {
+    publishDate: new Date(2024, 2, 15),
+    title: 'Constrained Policy Optimization via Bayesian World Models',
+    authors: ['Yarden As'],
+  },
+];
 
 const metadata = {
   title: 'Publications',
@@ -15,6 +23,6 @@ const metadata = {
     >
       The Blog
     </Headline>
-    <BlogList publications={page.data} />
+    <PublicationList publications={publications} />
   </section>
 </Layout>

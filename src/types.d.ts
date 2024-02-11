@@ -45,12 +45,10 @@ export interface Post {
 }
 
 export interface Publication {
-  /** A unique ID number that identifies a publication. */
-  id: string;
   /**  */
   publishDate: Date;
   /**  */
-  link: string;
+  link?: string;
 
   /**  */
   title: string;
