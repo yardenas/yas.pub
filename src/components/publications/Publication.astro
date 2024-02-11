@@ -4,7 +4,6 @@ import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 
-import { getPermalink } from '~/utils/permalinks';
 import { findImage } from '~/utils/images';
 import { getFormattedDate } from '~/utils/utils';
 import type { Publication } from '~/types';
@@ -62,10 +61,7 @@ const image = (await findImage(publication.image)) as ImageMetadata | undefined;
             publication.category && (
               <>
                 {' '}
-                ·{' '}
-                <a class="capitalize hover:underline" href={getPermalink(publication.category, 'category')}>
-                  {publication.category.replaceAll('-', ' ')}
-                </a>
+                · <span class="capitalize">{publication.category.replaceAll('-', ' ')}</span>
               </>
             )
           }
