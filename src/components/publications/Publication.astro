@@ -1,8 +1,11 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 
 import { getPermalink } from '~/utils/permalinks';
+import { findImage } from '~/utils/images';
 import { getFormattedDate } from '~/utils/utils';
 import type { Publication } from '~/types';
 
@@ -11,9 +14,28 @@ export interface Props {
 }
 
 const { publication } = Astro.props;
+const image = (await findImage(publication.image)) as ImageMetadata | undefined;
 ---
 
-<article class={`max-w-md mx-auto md:max-w-none flex flex-row gap-6 md:gap-8`}>
+<article class={`max-w-md mx-auto md:max-w-none flex flex-row gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>
+  {
+    image && (
+      <div class="bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
+        {image && (
+          <Image
+            src={image}
+            class="object-fill w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+            widths={[400, 128]}
+            width={128}
+            sizes="(max-width: 128px) 400px, 128px"
+            alt={publication.title}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+      </div>
+    )
+  }
   <div class="mt-2">
     <header>
       <div class="mb-1">

@@ -7,6 +7,7 @@ const getNormalizedPublication = (publication: CollectionEntry<'publication'>): 
   const {
     publishDate: rawPublishDate = new Date(),
     title,
+    image,
     link,
     code,
     tags: rawTags = [],
@@ -19,6 +20,7 @@ const getNormalizedPublication = (publication: CollectionEntry<'publication'>): 
   return {
     publishDate: publishDate,
     title: title,
+    image: image,
     link: link,
     code: code,
     category: category,

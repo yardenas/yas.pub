@@ -69,6 +69,7 @@ const publicationCollection = defineCollection({
     title: z.string(),
     link: z.string().url().optional(),
     code: z.string().optional(),
+    image: z.string().optional(),
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
     authors: z.array(z.string()),
