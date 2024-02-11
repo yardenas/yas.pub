@@ -44,6 +44,27 @@ export interface Post {
   readingTime?: number;
 }
 
+export interface Publication {
+  /** A unique ID number that identifies a publication. */
+  id: string;
+  /**  */
+  publishDate: Date;
+  /**  */
+  link: string;
+
+  /**  */
+  title: string;
+  /**  */
+  image?: ImageMetadata | string;
+
+  /**  */
+  category?: string;
+  /**  */
+  tags?: Array<string>;
+  /**  */
+  authors: Array<string>;
+}
+
 export interface MetaData {
   title?: string;
   ignoreTitleTemplate?: boolean;
