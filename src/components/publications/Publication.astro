@@ -1,0 +1,93 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
+import PublicationTags from '~/components/publications/PublicationTags.astro';
+
+import { findImage } from '~/utils/images';
+import { getFormattedDate } from '~/utils/utils';
+import type { Publication } from '~/types';
+
+export interface Props {
+  publication: Publication;
+}
+
+const { publication } = Astro.props;
+const image = (await findImage(publication.image)) as ImageMetadata | undefined;
+---
+
+<article class={`max-w-md mx-auto md:max-w-none flex flex-row gap-6 md:gap-8`}>
+  {
+    image && (
+      <div class="bg-gray-400 dark:bg-slate-700 rounded shadow-lg basis-[14.2857143%] hidden md:flex mt-3">
+        {image && (
+          <Image
+            src={image}
+            class="object-fill w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+            widths={[400, 900]}
+            width={900}
+            sizes="(max-width: 900px) 400px, 900px"
+            alt={publication.title}
+            aspectRatio="16:9"
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+      </div>
+    )
+  }
+  <div class="mt-2">
+    <header>
+      <div class="mb-1">
+        <span class="text-sm">
+          <Icon name="tabler:calendar-share" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+          <time datetime={String(publication.publishDate)} class="inline-block"
+            >{getFormattedDate(publication.publishDate)}</time
+          >
+          {
+            publication.authors && (
+              <>
+                {' '}
+                · <Icon name="tabler:school" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+                {publication.authors.map((author, index) => (
+                  <span class={`${author === 'Yarden As' ? 'font-bold' : ''}`}>
+                    {`${author}${index === publication.authors.length - 1 ? '' : ', '}`}
+                  </span>
+                ))}
+              </>
+            )
+          }
+          {
+            publication.category && (
+              <>
+                {' '}
+                · <span class="capitalize">{publication.category.replaceAll('-', ' ')}</span>
+              </>
+            )
+          }
+        </span>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-1 font-heading dark:text-slate-300">
+        {publication.title}
+      </h2>
+      {
+        publication.link !== undefined && (
+          <a href={publication.link} class="hover:text-primary transition ease-in duration-200">
+            Link
+          </a>
+        )
+      }
+      {publication.title && publication.code && '·'}
+      {
+        publication.code !== undefined && (
+          <a href={publication.code} class="hover:text-primary transition ease-in duration-200">
+            Code
+          </a>
+        )
+      }
+    </header>
+    <footer class="mt-2">
+      <PublicationTags tags={publication.tags} />
+    </footer>
+  </div>
+</article>

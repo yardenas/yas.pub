@@ -44,6 +44,26 @@ export interface Post {
   readingTime?: number;
 }
 
+export interface Publication {
+  /**  */
+  publishDate: Date;
+  /**  */
+  link?: string;
+  /**  */
+  code?: string;
+  /**  */
+  title: string;
+  /**  */
+  image?: ImageMetadata | string;
+
+  /**  */
+  category?: string;
+  /**  */
+  tags?: Array<string>;
+  /**  */
+  authors: Array<string>;
+}
+
 export interface MetaData {
   title?: string;
   ignoreTitleTemplate?: boolean;

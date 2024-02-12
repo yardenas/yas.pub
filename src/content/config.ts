@@ -63,6 +63,19 @@ const postCollection = defineCollection({
   }),
 });
 
+const publicationCollection = defineCollection({
+  schema: z.object({
+    publishDate: z.date(),
+    title: z.string(),
+    link: z.string().url().optional(),
+    code: z.string().optional(),
+    image: z.string().optional(),
+    category: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    authors: z.array(z.string()),
+  }),
+});
 export const collections = {
   post: postCollection,
+  publication: publicationCollection,
 };

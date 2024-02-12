@@ -1,0 +1,24 @@
+---
+import type { Publication } from '~/types';
+
+export interface Props {
+  tags: Publication['tags'];
+  class?: string;
+}
+
+const { tags, class: className = 'text-sm' } = Astro.props;
+---
+
+{
+  tags && Array.isArray(tags) && (
+    <>
+      <ul class={className}>
+        {tags.map((tag) => (
+          <li class="bg-accent text-white rounded-lg inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium">
+            {tag}
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
