@@ -32,7 +32,8 @@ const getNormalizedPublication = (publication: CollectionEntry<'publication'>): 
 const load = async function (): Promise<Array<Publication>> {
   const publications = await getCollection('publication');
   const normalizedPublications = publications.map((publication) => getNormalizedPublication(publication));
-  return normalizedPublications;
+  const results = normalizedPublications.sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf());
+  return results;
 };
 
 let _publications: Array<Publication>;
