@@ -1,7 +1,7 @@
 import { getHomePermalink, getPermalink } from '~/utils/permalinks';
 export const headerData = {
   links: [
-    { text: 'Publications', href: getPermalink('/publications') },
+    { text: 'Publications & Talks', href: getPermalink('/publications') },
     { text: 'CV', href: '/pdf/yarden-as-2022.pdf' },
   ],
   position: 'right',

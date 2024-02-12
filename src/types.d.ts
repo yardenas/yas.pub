@@ -49,7 +49,8 @@ export interface Publication {
   publishDate: Date;
   /**  */
   link?: string;
-
+  /**  */
+  code?: string;
   /**  */
   title: string;
   /**  */

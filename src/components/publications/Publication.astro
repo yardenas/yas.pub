@@ -2,7 +2,7 @@
 import type { ImageMetadata } from 'astro';
 import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
-import PostTags from '~/components/blog/Tags.astro';
+import PublicationTags from '~/components/publications/PublicationTags.astro';
 
 import { findImage } from '~/utils/images';
 import { getFormattedDate } from '~/utils/utils';
@@ -40,7 +40,7 @@ const image = (await findImage(publication.image)) as ImageMetadata | undefined;
     <header>
       <div class="mb-1">
         <span class="text-sm">
-          <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+          <Icon name="tabler:calendar-share" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(publication.publishDate)} class="inline-block"
             >{getFormattedDate(publication.publishDate)}</time
           >
@@ -48,7 +48,7 @@ const image = (await findImage(publication.image)) as ImageMetadata | undefined;
             publication.authors && (
               <>
                 {' '}
-                · <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+                · <Icon name="tabler:school" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
                 {publication.authors.map((author, index) => (
                   <span class={`${author === 'Yarden As' ? 'font-bold' : ''}`}>
                     {`${author}${index === publication.authors.length - 1 ? '' : ', '}`}
@@ -68,20 +68,24 @@ const image = (await findImage(publication.image)) as ImageMetadata | undefined;
         </span>
       </div>
       <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
-        {
-          publication.link ? (
-            <a class="hover:text-primary transition ease-in duration-200" href={publication.link}>
-              {publication.title}
-            </a>
-          ) : (
-            publication.title
-          )
-        }
+        {publication.title}
       </h2>
+      {
+        publication.code !== undefined && (
+          <a href={publication.code} class="hover:text-primary transition ease-in duration-200">
+            Link
+          </a>
+        )
+      } · {
+        publication.code !== undefined && (
+          <a href={publication.code} class="hover:text-primary transition ease-in duration-200">
+            Code
+          </a>
+        )
+      }
     </header>
-
     <footer class="mt-5">
-      <PostTags tags={publication.tags} />
+      <PublicationTags tags={publication.tags} />
     </footer>
   </div>
 </article>
