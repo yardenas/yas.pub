@@ -1,5 +1,5 @@
 ---
-publishDate: 2023-07-17T00:00:00Z
+publishDate: 2022-01-24T00:00:00Z
 title: Constrained Policy Optimization via Bayesian World Models
 category: Paper
 link: https://arxiv.org/abs/2201.09802
