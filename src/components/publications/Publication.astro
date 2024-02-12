@@ -19,7 +19,7 @@ const image = (await findImage(publication.image)) as ImageMetadata | undefined;
 <article class={`max-w-md mx-auto md:max-w-none flex flex-row gap-6 md:gap-8`}>
   {
     image && (
-      <div class="bg-gray-400 dark:bg-slate-700 rounded shadow-lg basis-[14.2857143%] hidden md:flex">
+      <div class="bg-gray-400 dark:bg-slate-700 rounded shadow-lg basis-[14.2857143%] hidden md:flex mt-3">
         {image && (
           <Image
             src={image}
