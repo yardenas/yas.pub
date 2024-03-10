@@ -14,6 +14,8 @@ import tasks from './src/utils/tasks';
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter.mjs';
 
 import { ANALYTICS, SITE } from './src/utils/config.ts';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -73,7 +75,6 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
-
     tasks(),
   ],
 
@@ -82,8 +83,23 @@ export default defineConfig({
   },
 
   markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin],
-    rehypePlugins: [responsiveTablesRehypePlugin],
+    remarkPlugins: [readingTimeRemarkPlugin, remarkMath],
+    rehypePlugins: [
+      responsiveTablesRehypePlugin,
+      [
+        rehypeKatex,
+        {
+          macros: {
+            '\\E': '\\mathbb{E}',
+            '\\C': '\\mathbb{C}',
+            '\\R': '\\mathbb{R}',
+            '\\N': '\\mathbb{N}',
+            '\\Q': '\\mathbb{Q}',
+            '\\bigO': '\\mathcal{O}',
+          },
+        },
+      ],
+    ],
   },
 
   vite: {

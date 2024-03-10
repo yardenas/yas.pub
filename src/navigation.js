@@ -1,8 +1,9 @@
-import { getHomePermalink, getPermalink } from '~/utils/permalinks';
+import { getBlogPermalink, getHomePermalink, getPermalink } from '~/utils/permalinks';
 export const headerData = {
   links: [
     { text: 'Publications & Talks', href: getPermalink('/publications') },
     { text: 'CV', href: '/pdf/yarden-as-2022.pdf' },
+    { text: 'Blog', href: getBlogPermalink() },
     // { text: 'Stream of consciousness', href: '#' },
   ],
   position: 'right',

@@ -25,6 +25,8 @@
     "astro-icon": "^1.0.3",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0",
     "typescript-esbuild": "^0.3.6",
     "unpic": "^3.16.0"
   },
