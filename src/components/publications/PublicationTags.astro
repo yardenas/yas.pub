@@ -14,7 +14,7 @@ const { tags, class: className = 'text-sm' } = Astro.props;
     <>
       <ul class={className}>
         {tags.map((tag) => (
-          <li class="bg-accent text-white rounded-lg inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium">
+          <li class="bg-gray-100 dark:bg-slate-700 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 font-medium text-muted">
             {tag}
           </li>
         ))}
