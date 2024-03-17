@@ -4,7 +4,7 @@ export const headerData = {
     { text: 'Publications & Talks', href: getPermalink('/publications') },
     { text: 'Blog', href: getBlogPermalink() },
     { text: 'CV', href: '/pdf/yarden-as-2022.pdf' },
-    // { text: 'Stream of consciousness', href: '#' },
+    // { text: 'Title: Stream of consciousness / dev/null', href: '#' },
   ],
   position: 'right',
 };

@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+export interface Props {
+  heading?: string;
+  icon?: string;
+  emoji?: string;
+}
+const { heading: header, icon = '', emoji = '' } = Astro.props;
+---
+
+<div class="bg-gray-100 rounded-md p-2.5">
+  <div class="flex flex-row gap-2 items-center">
+    {
+      icon && (
+        <div>
+          <Icon name={icon} class={'w-4 h-4'} />
+        </div>
+      )
+    }
+    {emoji && <div>{emoji}</div>}
+    {
+      header ? (
+        <div class="font-bold">
+          <span class="font-semibold">{header}</span>
+        </div>
+      ) : (
+        <slot />
+      )
+    }
+  </div>
+  {header && <slot />}
+</div>

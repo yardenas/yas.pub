@@ -9,16 +9,18 @@ import type { MetaData } from '~/types';
 
 export interface Props {
   metadata?: MetaData;
+  'bg-color'?: string;
 }
 
 const { metadata } = Astro.props;
+const bgColor = Astro.props['bg-color'] || 'bg-white dark:bg-slate-900';
 ---
 
 <Layout metadata={metadata}>
   <slot name="header">
     <Header {...headerData} isSticky showToggleTheme />
   </slot>
-  <div class="mx-auto max-w-5xl">
+  <div class=`mx-auto max-w-5xl ${bgColor}`>
     <main>
       <slot />
     </main>
