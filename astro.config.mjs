@@ -68,6 +68,7 @@ export default defineConfig({
       HTML: {
         'html-minifier-terser': {
           removeAttributeQuotes: false,
+          ignoreCustomComments: ['^Surprise!.*'],
         },
       },
       Image: false,
