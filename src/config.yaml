@@ -16,11 +16,11 @@ metadata:
     index: true
     follow: true
   openGraph:
-    site_name: YAS
+    site_name: Yarden As
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/hero.png'
+        width: 512
+        height: 512
     type: website
   twitter:
     handle: '@onwidget'
