@@ -1,10 +1,9 @@
 ---
-publishDate: 2024-03-17T00:00:00Z
-title: Direction and Extrapolation in Active Learning
-tags:
-  - Active Learning
+publishDate: 2024-03-24T16:46:00Z
+title: A Reminder from Sam Altman
 ---
 
+The original blog post [here](https://blog.samaltman.com/what-i-wish-someone-had-told-me).
 1. Optimism, obsession, self-belief, raw horsepower and personal connections are how things get started.
 2. Cohesive teams, the right combination of calmness and urgency, and unreasonable commitment are how things get finished. Long-term orientation is in short supply; try not to worry about what people think in the short term, which will get easier over time.
 3. It is easier for a team to do a hard thing that really matters than to do an easy thing that doesn’t really matter; audacious ideas motivate people.
@@ -22,3 +21,7 @@ tags:
 15. Compounding exponentials are magic. In particular, you really want to build a business that gets a compounding advantage with scale.
 16. Get back up and keep going.
 17. Working with great people is one of the best parts of life.
+
+#### What do I think of this? 
+1. Beware of lists of inspirational ideas that will “improve you as a person.” 
+2. Practice makes perfect. How do you practice the above to the end of augmenting it in your daily life though?
