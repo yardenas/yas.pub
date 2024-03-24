@@ -29,7 +29,7 @@ const { Content } = thought;
       </h2>
     </header>
     <div
-      class="mx-auto px-6 sm:px-6 max-w-4xl prose prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"
+      class="mx-auto px-6 sm:px-6 max-w-4xl prose prose-base leading-snug dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px]"
     >
       {Content ? <Content /> : <Fragment set:html={thought.content || ''} />}
     </div>
