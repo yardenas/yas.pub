@@ -1,0 +1,17 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ThoughtList from '~/components/thoghts/ThoughtList.astro';
+import { getThoughts } from '~/utils/thoughts';
+
+const thoughts = await getThoughts();
+
+const metadata = {
+  title: 'Stream of Thoughts',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <ThoughtList thoughts={thoughts} />
+  </section>
+</Layout>

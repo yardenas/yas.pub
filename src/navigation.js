@@ -1,10 +1,10 @@
 import { getBlogPermalink, getHomePermalink, getPermalink } from '~/utils/permalinks';
 export const headerData = {
   links: [
-    { text: 'Publications & Talks', href: getPermalink('/publications') },
+    { text: 'Publications & Talks', href: getPermalink('publications') },
     { text: 'Blog', href: getBlogPermalink() },
+    { text: '/dev/null', href: getPermalink('the-stream-of-thought') },
     { text: 'CV', href: '/pdf/yarden-as-2022.pdf' },
-    // { text: 'Title: Stream of consciousness /dev/null', href: '#' },
   ],
   position: 'right',
 };
