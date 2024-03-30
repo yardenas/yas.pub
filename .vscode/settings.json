@@ -584,5 +584,6 @@
       "type": "command",
       "command": "workbench.action.toggleZenMode"
     }
-  ]
+  ],
+  "cSpell.words": ["Arora", "Sanjeev"]
 }
