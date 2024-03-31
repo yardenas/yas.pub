@@ -75,7 +75,17 @@ const publicationCollection = defineCollection({
     authors: z.array(z.string()),
   }),
 });
+
+const thoughtCollection = defineCollection({
+  schema: z.object({
+    publishDate: z.date(),
+    title: z.string(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
   publication: publicationCollection,
+  thought: thoughtCollection,
 };

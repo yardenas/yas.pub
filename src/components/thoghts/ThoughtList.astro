@@ -1,0 +1,20 @@
+---
+import Item from '~/components/thoghts/Thought.astro';
+import type { Thought } from '~/types';
+
+export interface Props {
+  thoughts: Array<Thought>;
+}
+
+const { thoughts } = Astro.props;
+---
+
+<ul>
+  {
+    thoughts.map((thought) => (
+      <li>
+        <Item thought={thought} />
+      </li>
+    ))
+  }
+</ul>

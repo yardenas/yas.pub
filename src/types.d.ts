@@ -64,6 +64,17 @@ export interface Publication {
   authors: Array<string>;
 }
 
+export interface Thought {
+  /**  */
+  publishDate: Date;
+  /**  */
+  title: string;
+  /**  */
+  tags?: Array<string>;
+  Content?: AstroComponentFactory;
+  content?: string;
+}
+
 export interface MetaData {
   title?: string;
   ignoreTitleTemplate?: boolean;

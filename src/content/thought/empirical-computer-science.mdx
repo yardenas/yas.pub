@@ -1,0 +1,33 @@
+---
+publishDate: 2024-03-31T22:14:00Z
+title: Why I think Empirical Computer Science is Important
+---
+
+I bumped today into the following tweet:
+
+<div class="flex justify-center">
+  <blockquote class="twitter-tweet">
+    <p lang="qme" dir="ltr">
+      <a href="https://t.co/EwTUXdwINJ">https://t.co/EwTUXdwINJ</a>
+    </p>
+    &mdash; Asuka (@HighFreqAsuka) <a href="https://twitter.com/HighFreqAsuka/status/1773923299476554128?ref_src=twsrc%5Etfw">March 30, 2024</a>
+  </blockquote>{' '}
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+and since lately I've had a bit more time for fun stuff, I decided to go in the rabbit hole and watch this ~1hr video where
+Sanjeev Arora motivates how we can develop successful AI, even though many problems in AI are generally intractable to solve
+(due to being in the [NP complexity class](https://en.wikipedia.org/wiki/NP_(complexity))).
+
+In essence, Arora argues that although many of these problems are theoretically intractable, it does not necessarily dictate that we cannot solve their real-world instantiations. To motivate this, Arora even cites [Klivans & Sherstov (2010)](https://pdf.sciencedirectassets.com/272574/1-s2.0-S0022000008X0008X/1-s2.0-S0022000008000706/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEO3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIDyhTUg%2FdFLgCfx3FwOi3GvdDeuyN%2Fc%2Fqa6BVsRufucUAiALM1m0ayIytSFqR3ysYx0IBs3pKB00RtAAnyumL0DemCqzBQgWEAUaDDA1OTAwMzU0Njg2NSIMCZ8mVBNaXGlI%2BcemKpAFGQsPh7cMyhr50Vmb%2B6IXUeoqDByQPYaEZqt4D9E5AY5Nmy7RTYYzOV%2FVzYE6feKHCfSLlqh7IYq3u1f53FRhvOHqmbzYEPBDckN5sdTHREkz9Y%2BPeRZ1dFnjmANXVJP4XjB1eHj85kA7S779H%2BZIsKra5m5ekJu7MzDDXXLyajt56DZhGagaqVhoWhAr%2FnpfN%2FcxRujeDLUFx4%2BjHbEPbIi6dCHwzd%2B%2FMRDGMnPuDbLawlxE%2F3Tu6M0kuQwda4pAzj0X9jiBYzl17C8SzznEm7ZqOzNXACDuwl00trbfnO1H3ZQwMQeDxjF28kulnmY1Q8CGNKs2680kLTgyZlGY8lCFcAU2JvmOy4NsLnOACcY9wODkEj0RWbPP8F1nNdOGQYqf148SRUdoKX4TS1bkFqPpCutr3HhGtSdkBqy928l3At9iDajS4JPxoPoVe8UEcyg2MsROAhnxKzG8%2BJilx8AaNHcn8vZuTkIunIkjjDVTiQXwxw0g7d14h4lOcFD7LP253b2YtDPTxRfp6lb%2FQ2iZkHyTKkHqiFpYrokpbH%2BppOk7G3OuGPtrjE%2BSJBgRiEThQ7a%2FU%2FsuBOeRhSi%2BStydH2R5RHvTZPJQcUCungz2WY1QHc%2FngvCIrIO7CVtK5JYXRBtQ6616Ie5dPGSS2IN4QjLjVu73LU5wsApdOJW9dz1%2FARxLPqKjrnbzKLLOq%2BBxL%2BZtBuBUwB7E6sUkKcfv0ot0GG%2FFn2TFlgjk9JE8lzhkejK35J%2FUwShD%2FKhHXgXBUtdUte8xoPR34B13A87NkSeeJ1XP3nnAcgFwJu7DDS8ml1PhJQNoyvSTsukacFau0gjmsUh44rRcYfixtEcUBMLU13myrlqJG592q0IwpJGgsAY6sgEXJNycd0L82UcT66z5uUFstSP2AAdaMAxa1jhiSCblByF3Utq8XGTjEIzlN%2BkqoiAuCOltFdoD%2FVc2vxs4%2F8wE4tv%2FuzULGSY9NSmjBKHaU7LoO4h2nGVLgJV2xptB5VCrP9evLQVntFOSsSx7jbqGh0c%2FBmujYNrRWQbzczjEJbaNuLhp5yDmv7Z5XZXaU%2B5teQBkmImSXCiKUlPZYNFBz%2FXmPG8Mbpa3K1PWEdq61kR0&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240330T140609Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY57276G55%2F20240330%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ff83cae80b8a30901b4f27a48bf48fd430f6bbc0ff7f2708de6070865f34ce38&hash=d1ca5ae38919e08ead953581a1709c3a6158beaa274c560e955d0ea36c0b5c1d&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0022000008000706&tid=spdf-f944dedd-1092-4bc3-aa4e-11b75678d09f&sid=b52b3fac301ba546115b9039d9e15623080cgxrqb&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=030f5953065e045659&rr=86c8a89f2d253b51&cc=ch) as an evidence that "learning even a shallow net with one hidden layer is intractable".
+
+I tend to agree with Arora. Even though many problems are generally NP, it does not mean that in practice there is no hope in solving them. Take for example [planning in POMDPs](https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process) — theory tells us that generally, they are extremely hard to solve. But still, [there are practical algorithms that can solve (some) of them under (some) assumptions](https://arxiv.org/abs/1912.01603).
+
+So, what's the catch?
+
+**Modeling.**
+
+Given the "right" modeling choices (a.k.a "assumptions"), we are able to reduce the complexity of many of these problems. And while theorists develop (sometimes too) general formulations of problems, which aim to cover the worst-case inputs, the goal us (peasent) practicioners is to connect these formulations to the natural world. According to Arora, the good news is that the natural world is more forgiving, so with a little bit of chutzpah and cleverness, we might be able to exploit this to solve hard but interesting problems.
+
+I am not yet sure how can we find these assumptions. It's 2024, so I am tempted to say "one has to consider [scale](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)." But in some way, this contradicts to whole argument. One thing I know is that there are still some missing pieces — for example, humans are much more sample efficient when it comes to learning.
+
+So why do I think empirical computer science is important? First, an honest disclaimer: this is what I do👋. But aside from that, I believe that it is more likely to find the these assumptions by getting your hands dirty. This does _not_ imply any (lack) of soundness of empirical work! Quite the contrary — there is less room for alchemy exactly because alchemy fails. Sooner or later.
