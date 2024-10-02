@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-02-13T00:00:00Z
+publishDate: 2024-10-05T00:00:00Z
 title: Information-based Transductive Active Learning
 category: Paper
 link: https://arxiv.org/abs/2402.15898
