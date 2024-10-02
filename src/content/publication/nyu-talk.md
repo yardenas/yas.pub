@@ -6,4 +6,6 @@ link: https://yardenas.github.io/talks/
 tags:
   - Safe Reinforcement Learning
   - CMDPs
+authors:
+  - Yarden As
 ---
