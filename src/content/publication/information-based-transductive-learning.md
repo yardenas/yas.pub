@@ -1,6 +1,6 @@
 ---
 publishDate: 2024-10-05T00:00:00Z
-title: Information-based Transductive Active Learning
+title: "Transductive Active Learning: Theory and Applications"
 category: Paper
 link: https://arxiv.org/abs/2402.15898
 tags:
