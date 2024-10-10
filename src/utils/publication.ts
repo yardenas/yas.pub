@@ -13,6 +13,7 @@ const getNormalizedPublication = (publication: CollectionEntry<'publication'>): 
     tags: rawTags = [],
     category: rawCategory,
     authors,
+    venue,
   } = data;
   const publishDate = new Date(rawPublishDate);
   const category = rawCategory;
@@ -26,6 +27,7 @@ const getNormalizedPublication = (publication: CollectionEntry<'publication'>): 
     category: category,
     tags: tags,
     authors: authors,
+    venue: venue,
   };
 };
 

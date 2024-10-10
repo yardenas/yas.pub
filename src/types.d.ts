@@ -55,13 +55,14 @@ export interface Publication {
   title: string;
   /**  */
   image?: ImageMetadata | string;
-
   /**  */
   category?: string;
   /**  */
   tags?: Array<string>;
   /**  */
   authors: Array<string>;
+  /**  */
+  venue?: string;
 }
 
 export interface Talk {
@@ -74,6 +75,7 @@ export interface Talk {
   /**  */
   category?: string;
   /**  */
+  location?: string;
 }
 
 export interface Thought {

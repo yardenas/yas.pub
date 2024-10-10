@@ -12,4 +12,5 @@ authors:
   - Lenart Treven
   - Yarden As
   - Andreas Krause
+venue: ICLR 2024 @ Bridging the Gap Between Practice and Theory in Deep Learning
 ---

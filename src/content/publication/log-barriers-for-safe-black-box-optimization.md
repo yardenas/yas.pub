@@ -11,4 +11,5 @@ authors:
   - Yarden As
   - Maryam Kamgarpour
   - Andreas Krause
+venue: JMLR
 ---

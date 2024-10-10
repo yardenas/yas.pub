@@ -4,12 +4,13 @@ import type { Talk } from '~/types';
 
 const getNormalizedTalk = (talk: CollectionEntry<'talks'>): Talk => {
   const { data } = talk;
-  const { publishDate: rawPublishDate = new Date(), title, link } = data;
+  const { publishDate: rawPublishDate = new Date(), title, link, location } = data;
   const publishDate = new Date(rawPublishDate);
   return {
     publishDate: publishDate,
     title: title,
     link: link,
+    location: location,
   };
 };
 

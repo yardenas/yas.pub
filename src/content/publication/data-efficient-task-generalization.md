@@ -14,4 +14,5 @@ authors:
   - Marco Hutter
   - Stelian Coros
   - Andreas Krause
+venue: RA-L, IROS 2024
 ---

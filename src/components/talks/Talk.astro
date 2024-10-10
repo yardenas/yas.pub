@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-
 import { getFormattedDate } from '~/utils/utils';
 import type { Talk } from '~/types';
 
@@ -8,7 +7,7 @@ export interface Props {
   talk: Talk;
 }
 
-const { talk: talk } = Astro.props;
+const { talk } = Astro.props;
 ---
 
 <article class={`max-w-md mx-auto md:max-w-none flex flex-row gap-6 md:gap-8`}>
@@ -32,7 +31,15 @@ const { talk: talk } = Astro.props;
         {talk.title}
       </h2>
       {
-        talk.link !== undefined && (
+        talk.location && (
+          <div class="text-sm mb-1">
+            <Icon name="tabler:map-pin" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+            <span>{talk.location}</span>
+          </div>
+        )
+      }
+      {
+        talk.link && (
           <a href={talk.link} class="hover:text-primary transition ease-in duration-200">
             Link
           </a>
