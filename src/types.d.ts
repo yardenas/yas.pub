@@ -64,6 +64,18 @@ export interface Publication {
   authors: Array<string>;
 }
 
+export interface Talk {
+  /**  */
+  publishDate: Date;
+  /**  */
+  link?: string;
+  /**  */
+  title: string;
+  /**  */
+  category?: string;
+  /**  */
+}
+
 export interface Thought {
   /**  */
   publishDate: Date;

@@ -1,0 +1,17 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import TalkList from '~/components/talks/TalkList.astro';
+import { getTalks } from '~/utils/talks';
+
+const talks = await getTalks();
+
+const metadata = {
+  title: 'Talks',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <TalkList talks={talks} />
+  </section>
+</Layout>

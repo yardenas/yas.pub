@@ -76,6 +76,14 @@ const publicationCollection = defineCollection({
   }),
 });
 
+const talkCollection = defineCollection({
+  schema: z.object({
+    publishDate: z.date(),
+    title: z.string(),
+    link: z.string().url().optional(),
+  }),
+});
+
 const thoughtCollection = defineCollection({
   schema: z.object({
     publishDate: z.date(),
@@ -90,9 +98,11 @@ const newsCollection = defineCollection({
     title: z.string(),
   }),
 });
+
 export const collections = {
   post: postCollection,
   publication: publicationCollection,
   thought: thoughtCollection,
   news: newsCollection,
+  talks: talkCollection,
 };

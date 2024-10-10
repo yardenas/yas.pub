@@ -1,0 +1,20 @@
+---
+import Item from '~/components/talks/Talk.astro';
+import type { Talk } from '~/types';
+
+export interface Props {
+  talks: Array<Talk>;
+}
+
+const { talks: talks } = Astro.props;
+---
+
+<ul>
+  {
+    talks.map((talk) => (
+      <li>
+        <Item talk={talk} />
+      </li>
+    ))
+  }
+</ul>
