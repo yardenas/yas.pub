@@ -75,6 +75,14 @@ export interface Thought {
   content?: string;
 }
 
+export interface News {
+  /**  */
+  publishDate: Date;
+  /**  */
+  title: string;
+  /**  */
+}
+
 export interface MetaData {
   title?: string;
   ignoreTitleTemplate?: boolean;
