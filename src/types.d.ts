@@ -55,13 +55,27 @@ export interface Publication {
   title: string;
   /**  */
   image?: ImageMetadata | string;
-
   /**  */
   category?: string;
   /**  */
   tags?: Array<string>;
   /**  */
   authors: Array<string>;
+  /**  */
+  venue?: string;
+}
+
+export interface Talk {
+  /**  */
+  publishDate: Date;
+  /**  */
+  link?: string;
+  /**  */
+  title: string;
+  /**  */
+  category?: string;
+  /**  */
+  location?: string;
 }
 
 export interface Thought {
@@ -73,6 +87,14 @@ export interface Thought {
   tags?: Array<string>;
   Content?: AstroComponentFactory;
   content?: string;
+}
+
+export interface News {
+  /**  */
+  publishDate: Date;
+  /**  */
+  title: string;
+  /**  */
 }
 
 export interface MetaData {

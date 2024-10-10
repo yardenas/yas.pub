@@ -5,7 +5,6 @@ category: Paper
 link: https://arxiv.org/abs/2201.09802
 code: https://github.com/yardenas/la-mbda
 tags:
-  - ICLR2022
   - Safe Reinforcement Learning
   - CMDPs
 authors:
@@ -13,4 +12,5 @@ authors:
   - Ilnura Unsmanova
   - Sebastian Curi
   - Andreas Krause
+venue: ICLR 2022
 ---

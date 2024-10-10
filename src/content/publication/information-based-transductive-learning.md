@@ -8,11 +8,11 @@ tags:
   - Bayesian Optimization
   - Experimental Design
   - Safe Exploration
-  - NeurIPS 2024
 authors:
   - Jonas Hübotter
   - Bhavya Sukhija
   - Lenart Treven
   - Yarden As
   - Andreas Krause
+venue: NeurIPS 2024
 ---

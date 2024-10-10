@@ -3,6 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import { headerData } from '~/navigation';
+import { getNews } from '~/utils/news';
+const recentNews = await getNews();
+
 const metadata = {
   title: 'Yarden As 🎶',
   ignoreTitleTemplate: true,
@@ -14,53 +17,48 @@ const metadata = {
     <Header {...headerData} />
   </Fragment>
   <Hero image={{ src: '~/assets/images/hero.png', alt: 'Yasos!' }}>
-    <Fragment slot="title"> <span class="font-mono">Yarden As </span></Fragment>
+    <Fragment slot="title">
+      <span class="font-mono">Yarden As</span>
+    </Fragment>
     <Fragment slot="subtitle">
       <span class="font-mono">[ y ah r Den ]</span>
       <br /><span class="font-serif-heb text-2xl">ירדן</span>
     </Fragment>
     <Fragment slot="content">
-      <div class="flex flex-row gap-5 items-start mb-2">
-        <h3 class="text-2xl font-bold tracking-tight sm:text-3xl shrink-0">About me</h3>
-        <p class="w-fit">
-          I am a mechanical engineer who became a roboticist and now a researcher in machine learning (“AI”).
-        </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div class="space-y-4">
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">About me</h3>
+          <p class="text-sm">
+            I am a mechanical engineer turned roboticist, now pursuing a PhD in machine learning ("AI") at the ETH AI
+            Center and Learning and Adaptive Systems Group. My research focuses on safe reinforcement learning,
+            uncertainty quantification, Bayesian Optimization, and Active Learning.
+          </p>
+          <p class="text-sm">
+            Previously, I co-founded Obol, a Fintech startup, and worked as a principal robotics engineer at Temi. I
+            hold a Master's degree in robotics from ETH Zürich and graduated summa cum laude from the Technion.
+          </p>
+          <p class="text-sm">
+            Originally from Haifa, I've also lived in Tel-Aviv. I enjoy climbing, slacklining, music, food, wine and
+            eastern philosophy.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-4">Recent News</h3>
+          <ul class="space-y-3 text-sm">
+            {
+              recentNews.map((item) => (
+                <li>
+                  <span class="font-bold">
+                    {item.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  </span>
+                  <br />
+                  {item.title}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </div>
-      <p class="first-letter:text-5xl first-letter:font-bold first-letter:me-1 first-letter:float-start">
-        <span class="after:content-['.'] font-bold">Academic</span> I am currently a PhD student at the <a
-          class="a-link"
-          href="https://ai.ethz.ch/">ETH AI Center</a
-        > and <a class="a-link" href="https://las.inf.ethz.ch/">Learning and Adaptive Systems Group. </a> My research focuses
-        on sequential decision making under uncertainty and constraints. Specifically, I am trying to make <span
-          class="text-accent"><em>safe</em></span
-        > reinformcement learning algorithms work reliably in practice. More broadly, I am also interested in uncertainty
-        quantification, Bayesian Optimization and Active Learning. Before my PhD I earned my Master's degree in robotics
-        from <a class="a-link" href="https://ethz.ch/en.html">ETH Zürich</a>. Prior to that, I graduated summa cum laude
-        from the
-        <a class="a-link" href="https://www.technion.ac.il/en/home-2/">Technion</a>.
-      </p>
-      <br />
-      <p class="first-letter:text-5xl first-letter:font-bold first-letter:me-1 first-letter:float-start">
-        <span class="after:content-['.'] font-bold">Professional</span> I co-founded <a
-          class="a-link"
-          href="https://obol.app">Obol</a
-        >, a Fintech startup that helps finance teams manage their companies' cash flow. I contributed in growing Obol
-        from a “three-dudes-and-a-laptop” company into a revenue making machine, leading all the technological
-        activities of the company. My team was able to ship an enterprise-grade product under 6 months, while conforming
-        to strict SOC2 standards. Before that I was a principal robotics engineer at <a
-          class="a-link"
-          href="https://robotemi.com">Temi</a
-        >, overseeing multiple algorithmic projects, delivering these to a hardware product with ~thousands of units
-        around the globe.
-      </p>
-      <br />
-      <p class="first-letter:text-5xl first-letter:font-bold first-letter:me-1 first-letter:float-start">
-        <span class="after:content-['.'] font-bold">Personal</span> I grew up in <a
-          class="a-link"
-          href="https://en.wikipedia.org/wiki/Haifa">Haifa</a
-        >, got to live for a while in <a class="a-link" href="https://en.wikipedia.org/wiki/Tel_Aviv">Tel-Aviv</a>. I
-        like climbing, slacklining, music, food and everything good in life.
-      </p>
     </Fragment>
   </Hero>
 </Layout>

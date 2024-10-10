@@ -73,6 +73,16 @@ const publicationCollection = defineCollection({
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
     authors: z.array(z.string()),
+    venue: z.string().optional(),
+  }),
+});
+
+const talkCollection = defineCollection({
+  schema: z.object({
+    publishDate: z.date(),
+    title: z.string(),
+    link: z.string().url().optional(),
+    location: z.string().optional(),
   }),
 });
 
@@ -84,8 +94,17 @@ const thoughtCollection = defineCollection({
   }),
 });
 
+const newsCollection = defineCollection({
+  schema: z.object({
+    publishDate: z.date(),
+    title: z.string(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
   publication: publicationCollection,
   thought: thoughtCollection,
+  news: newsCollection,
+  talks: talkCollection,
 };

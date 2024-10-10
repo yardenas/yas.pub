@@ -4,7 +4,6 @@ title: When to Sense and Control? A Time-adaptive Approach for Continuous-Time R
 category: Paper
 link: https://arxiv.org/pdf/2406.01163
 tags:
-  - NeurIPS 2024
   - Reinforcement Learning
 authors:
   - Lenart Treven
@@ -12,4 +11,5 @@ authors:
   - Yarden As
   - Florian Dorfler
   - Andreas Krause
+venue: NeurIPS 2024
 ---
