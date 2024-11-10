@@ -28,27 +28,27 @@ const metadata = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <div class="space-y-4">
           <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">About me</h3>
-          <p class="text-sm">
-            I am a mechanical engineer turned roboticist, now pursuing a PhD in machine learning ("AI") at the ETH AI
+          <p class="text-md">
+            I am a mechanical engineer turned roboticist, now pursuing a PhD in machine learning (“AI”) at the ETH AI
             Center and Learning and Adaptive Systems Group. My research focuses on safe reinforcement learning,
             uncertainty quantification, Bayesian Optimization, and Active Learning.
           </p>
-          <p class="text-sm">
+          <p class="text-md">
             Previously, I co-founded Obol, a Fintech startup, and worked as a principal robotics engineer at Temi. I
             hold a Master's degree in robotics from ETH Zürich and graduated summa cum laude from the Technion.
           </p>
-          <p class="text-sm">
+          <p class="text-md">
             Originally from Haifa, I've also lived in Tel-Aviv. I enjoy climbing, slacklining, music, food, wine and
             eastern philosophy.
           </p>
         </div>
         <div>
           <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-4">Recent News</h3>
-          <ul class="space-y-3 text-sm">
+          <ul class="space-y-3 text-md">
             {
               recentNews.map((item) => (
                 <li>
-                  <span class="font-bold">
+                  <span class="font-bold text-accent">
                     {item.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                   </span>
                   <br />
@@ -65,6 +65,6 @@ const metadata = {
 
 <style>
   * {
-    font-family: var(--aw-font-mono);
+    font-family: var(--aw-font-serif);
   }
 </style>

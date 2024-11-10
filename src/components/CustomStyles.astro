@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/inter';
+import '@fontsource-variable/bitter';
 import '@fontsource/ibm-plex-mono';
 import '@fontsource-variable/noto-serif-hebrew';
 
@@ -23,45 +24,47 @@ import '@fontsource-variable/noto-serif-hebrew';
 
 <style is:inline is:global>
   :root {
-    --aw-font-sans: 'Inter Variable';
+    --aw-font-sans: 'Inter Variable'; /* For occasional sans usage */
     --aw-font-mono: 'IBM Plex Mono';
-    --aw-font-serif: var(--aw-font-sans);
-    --aw-font-heading: var(--aw-font-sans);
-    --aw-font-serif-heb: 'Noto Serif Hebrew';
+    --aw-font-serif: 'Bitter Variable'; /* Main serif font for New Yorker vibe */
+    --aw-font-heading: 'IBM Plex Mono'; /* Headings in a monospace for subtle sophistication */
 
-    --aw-color-primary: rgb(142, 69, 133);
-    --aw-color-secondary: rgb(181, 126, 220);
-    --aw-color-accent: rgb(183, 159, 144);
+    /* Color palette inspired by The New Yorker: Black, white, gray, and a touch of red */
+    --aw-color-primary: rgb(0, 0, 0); /* Black as primary */
+    --aw-color-secondary: rgb(150, 150, 150); /* Neutral gray */
+    --aw-color-accent: rgb(219, 51, 52); /* Red accent */
 
-    --aw-color-text-heading: rgb(0 0 0);
-    --aw-color-text-default: rgb(16 16 16);
-    --aw-color-text-muted: rgb(16 16 16 / 66%);
-    --aw-color-bg-page: rgb(255, 255, 255);
+    --aw-color-text-heading: var(--aw-color-primary);
+    --aw-color-text-default: rgb(30, 30, 30); /* Deep gray for body text */
+    --aw-color-text-muted: rgb(100, 100, 100); /* Muted text gray */
+    --aw-color-bg-page: rgb(254, 254, 252); /* White background */
 
-    --aw-color-bg-page-dark: rgb(105, 108, 137);
+    --aw-color-bg-page-dark: rgb(20, 20, 20); /* Dark mode background for high contrast */
 
     ::selection {
-      background-color: lavender;
+      background-color: var(--aw-color-accent);
+      color: var(--aw-color-bg-page);
     }
   }
 
+  /* Dark mode adjustments */
   .dark {
     --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: var(--aw-font-sans);
-    --aw-font-heading: var(--aw-font-sans);
+    --aw-font-serif: 'Literata';
+    --aw-font-heading: 'IBM Plex Mono';
 
-    --aw-color-primary: rgb(30 64 175);
-    --aw-color-secondary: rgb(30 58 138);
-    --aw-color-accent: rgb(109 40 217);
-
-    --aw-color-text-heading: rgb(0 0 0);
-    --aw-color-text-default: rgb(229 236 246);
-    --aw-color-text-muted: rgb(229 236 246 / 66%);
-    --aw-color-bg-page: var(--aw-color-bg-page-dark);
+    --aw-color-primary: rgb(255, 255, 255); /* Primary color becomes white for dark mode */
+    --aw-color-secondary: rgb(100, 100, 100); /* Soft gray */
+    --aw-color-accent: rgb(200, 0, 0); /* Keep red accent */
+    
+    --aw-color-text-heading: var(--aw-color-primary);
+    --aw-color-text-default: rgb(229, 229, 229); /* Light gray text on dark background */
+    --aw-color-text-muted: rgb(180, 180, 180); /* Muted text gray in dark mode */
+    --aw-color-bg-page: var(--aw-color-bg-page-dark); /* Use dark background */
 
     ::selection {
-      background-color: black;
-      color: snow;
+      background-color: var(--aw-color-primary);
+      color: var(--aw-color-accent);
     }
   }
 </style>
