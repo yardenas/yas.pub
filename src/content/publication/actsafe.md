@@ -1,6 +1,6 @@
 ---
 publishDate: 2025-01-29T00:00:00Z
-title: "ActSafe: Active Exploration with Safety Constraints for Reinforcement Learning"
+title: 'ActSafe: Active Exploration with Safety Constraints for Reinforcement Learning'
 category: Paper
 link: https://yardenas.github.io/actsafe/
 tags:
