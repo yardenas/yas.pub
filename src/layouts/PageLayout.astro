@@ -6,7 +6,7 @@ import Footer from '~/components/widgets/Footer.astro';
 import { headerData, footerData } from '~/navigation';
 
 import type { MetaData } from '~/types';
-// import Announcement from '~/components/widgets/Announcement.astro';
+import Announcement from '~/components/widgets/Announcement.astro';
 
 export interface Props {
   metadata?: MetaData;
@@ -18,9 +18,9 @@ const bgColor = Astro.props['bg-color'] || 'bg-white dark:bg-slate-900';
 ---
 
 <Layout metadata={metadata}>
-  <!-- <slot name="announcement">
+  <slot name="announcement">
     <Announcement />
-  </slot> -->
+  </slot>
   <slot name="header">
     <Header {...headerData} isSticky showToggleTheme />
   </slot>

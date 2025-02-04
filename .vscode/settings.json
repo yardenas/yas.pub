@@ -585,11 +585,5 @@
       "command": "workbench.action.toggleZenMode"
     }
   ],
-  "cSpell.words": [
-    "Arora",
-    "Sanjeev",
-    "slacklining",
-    "Technion",
-    "Temi"
-  ]
+  "cSpell.words": ["Arora", "Sanjeev", "slacklining", "Technion", "Temi"]
 }

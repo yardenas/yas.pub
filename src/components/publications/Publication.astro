@@ -49,7 +49,7 @@ const image = (await findImage(publication.image)) as ImageMetadata | undefined;
                 {' '}
                 · <Icon name="tabler:users" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
                 {publication.authors.map((author, index) => (
-                  <span class={`${author === 'Yarden As' ? 'font-bold' : ''}`}>
+                  <span class={`${author.toLowerCase().includes('yarden as'.toLowerCase()) ? 'font-bold' : ''}`}>
                     {`${author}${index === publication.authors.length - 1 ? '' : ', '}`}
                   </span>
                 ))}
