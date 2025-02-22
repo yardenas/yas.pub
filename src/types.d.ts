@@ -66,16 +66,17 @@ export interface Publication {
 }
 
 export interface Talk {
-  /**  */
-  publishDate: Date;
-  /**  */
-  link?: string;
-  /**  */
+  /** Grouped talks based on title */
   title: string;
-  /**  */
+  /** Multiple instances of a talk with different locations and dates */
+  instances: {
+    publishDate: Date;
+    location: string;
+  }[];
+  /** Optional link for more details */
+  link?: string;
+  /** Category of the talk */
   category?: string;
-  /**  */
-  location?: string;
 }
 
 export interface Thought {

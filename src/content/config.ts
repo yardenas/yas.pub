@@ -82,7 +82,7 @@ const talkCollection = defineCollection({
     publishDate: z.date(),
     title: z.string(),
     link: z.string().url().optional(),
-    location: z.string().optional(),
+    location: z.string(),
   }),
 });
 
