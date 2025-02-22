@@ -3,7 +3,7 @@ export const headerData = {
   links: [
     { text: 'Publications', href: getPermalink('publications') },
     { text: 'Talks', href: getPermalink('talks') },
-    { text: 'CV', href: '/pdf/yarden-as-2024.pdf' },
+    { text: 'CV', href: '/pdf/yarden-as-2025.pdf' },
   ],
   position: 'right',
 };
