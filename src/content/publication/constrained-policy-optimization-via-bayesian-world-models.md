@@ -12,5 +12,5 @@ authors:
   - Ilnura Unsmanova
   - Sebastian Curi
   - Andreas Krause
-venue: ICLR 2022
+venue: ICLR 2022 (Spotlight)
 ---
