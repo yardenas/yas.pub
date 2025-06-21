@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Yarden As
     images:
-      - url: '~/assets/images/hero.png'
+      - url: '~/assets/images/hero-2025.png'
         width: 512
         height: 512
     type: website
