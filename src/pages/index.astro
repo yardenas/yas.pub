@@ -1,8 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import { headerData } from '~/navigation';
 import { getNews } from '~/utils/news';
 const recentNews = await getNews();
 
@@ -13,9 +11,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata} bg-color="--aw-color-bg-page">
-  <Fragment slot="header">
-    <Header {...headerData} />
-  </Fragment>
+  <Fragment slot="header"> </Fragment>
   <Hero image={{ src: '~/assets/images/hero-2025.png', alt: 'Yasos!' }}>
     <Fragment slot="title">
       <span class="font-mono">Yarden As</span>
@@ -29,19 +25,25 @@ const metadata = {
         <div class="space-y-4">
           <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">About me</h3>
           <p class="text-sm">
-            I am a mechanical engineer turned roboticist, now pursuing a PhD in machine learning (“AI”) at the ETH AI
-            Center and <a href="https://las.inf.ethz.ch/" class="a-link">Learning and Adaptive Systems Group</a>. My
-            research focuses on safe reinforcement learning, uncertainty quantification, Bayesian Optimization, and
-            Active Learning.
+            I am a roboticist, now pursuing a PhD in artificial intelligence and robotics, advised by <a
+              href="https://las.inf.ethz.ch/krausea/"
+              class="a-link"
+              target="_blank">Andreas Krause</a
+            >. My research focuses on online reinforcement learning, reinforcement learning under constraints and on
+            exploration.
           </p>
           <p class="text-sm">
             Previously, I co-founded <a href="https://obol.app" class="a-link">Obol</a>, a Fintech startup, and worked
             as a principal robotics engineer at Temi. I hold a Master's degree in robotics from ETH Zürich and graduated
-            summa cum laude from the Technion.
+            summa cum laude from Technion.
           </p>
+          <p class="text-sm">Originally from Haifa, Israel.</p>
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">Publications</h3>
           <p class="text-sm">
-            Originally from Haifa, I've also lived in Tel-Aviv. I enjoy climbing, running, music, food, wine and eastern
-            philosophy.
+            A full list of my publications can be found <a
+              href="https://scholar.google.com/citations?user=Z0qGI_kAAAAJ&hl=en"
+              class="a-link">here</a
+            >.
           </p>
         </div>
         <div>
