@@ -57,7 +57,7 @@ const metadata = {
         </div>
         <div>
           <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-4">Recent News</h3>
-          <ul class="space-y-3 text-sm">
+          <ul class="space-y-3 text-sm max-h-96 overflow-y-scroll pr-2 no-scrollbar">
             {
               recentNews.map((item) => (
                 <li>
@@ -79,5 +79,22 @@ const metadata = {
 <style>
   * {
     font-family: var(--aw-font-mono);
+  }
+  .no-scrollbar {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #aaa #fff; /* thumb color | track color */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    width: 6px; /* make scrollbar thin */
+  }
+
+  .no-scrollbar::-webkit-scrollbar-track {
+    background: transparent; /* no background */
+  }
+
+  .no-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #aaa; /* subtle gray thumb */
+    border-radius: 9999px; /* fully rounded */
   }
 </style>
