@@ -18,6 +18,7 @@ const bgColor = Astro.props['bg-color'] || 'bg-white dark:bg-slate-900';
 ---
 
 <Layout metadata={metadata}>
+  <slot name="head" slot="head" />
   <slot name="announcement">
     <!-- <Announcement /> -->
   </slot>

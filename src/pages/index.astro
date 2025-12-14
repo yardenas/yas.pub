@@ -2,7 +2,31 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import { getNews } from '~/utils/news';
+import heroImage from '~/assets/images/hero-2025.png';
+
 const recentNews = await getNews();
+const siteUrl = Astro.site ? Astro.site.toString() : 'https://yas.pub';
+const heroImageUrl = Astro.site ? new URL(heroImage.src, Astro.site).toString() : heroImage.src;
+const personStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${siteUrl}#person`,
+  name: 'Yarden As',
+  url: siteUrl,
+  image: heroImageUrl,
+  jobTitle: 'PhD candidate in Robotics and AI',
+  affiliation: {
+    '@type': 'CollegeOrUniversity',
+    name: 'ETH Zürich',
+  },
+  sameAs: [
+    'https://twitter.com/yarden_as',
+    'https://www.linkedin.com/in/yardenas/',
+    'https://scholar.google.com/citations?user=Z0qGI_kAAAAJ&hl=en',
+  ],
+  knowsAbout: ['robotics', 'reinforcement learning', 'online learning'],
+  description: 'Roboticist and researcher focusing on online reinforcement learning and safe exploration.',
+};
 
 const metadata = {
   title: 'Yarden As 🎶',
@@ -11,8 +35,11 @@ const metadata = {
 ---
 
 <Layout metadata={metadata} bg-color="--aw-color-bg-page">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(personStructuredData)} />
+  </Fragment>
   <Fragment slot="header"> </Fragment>
-  <Hero image={{ src: '~/assets/images/hero-2025.png', alt: 'Yasos!' }}>
+  <Hero image={{ src: heroImage, alt: 'Yasos!' }}>
     <Fragment slot="title">
       <span class="font-mono">Yarden As</span>
     </Fragment>
