@@ -1,9 +1,18 @@
 ---
 import { getAsset } from '~/utils/permalinks';
+import interLatinWght from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2';
+import ibmPlexMonoLatin400 from '@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2';
+import ibmPlexMonoLatin700 from '@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-700-normal.woff2';
+import notoSerifHebrewWght from '@fontsource-variable/noto-serif-hebrew/files/noto-serif-hebrew-hebrew-wght-normal.woff2';
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="max-image-preview:large" />
+
+<link rel="preload" href={interLatinWght} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={ibmPlexMonoLatin400} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={ibmPlexMonoLatin700} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={notoSerifHebrewWght} as="font" type="font/woff2" crossorigin />
 
 <link rel="sitemap" href={getAsset('/sitemap-index.xml')} />

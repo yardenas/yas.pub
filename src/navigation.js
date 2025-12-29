@@ -1,10 +1,6 @@
-import { getHomePermalink, getPermalink } from '~/utils/permalinks';
+import { getHomePermalink } from '~/utils/permalinks';
 export const headerData = {
-  links: [
-    { text: 'Publications', href: getPermalink('publications') },
-    { text: 'Talks', href: getPermalink('talks') },
-    { text: 'CV', href: '/pdf/yarden-as-2025.pdf' },
-  ],
+  links: [],
   position: 'right',
 };
 
@@ -18,11 +14,6 @@ export const footerData = {
       ariaLabel: 'Google Scholar',
       icon: 'academicons:google-scholar',
       href: 'https://scholar.google.com/citations?user=Z0qGI_kAAAAJ&hl=en',
-    },
-    {
-      ariaLabel: 'Spotify',
-      icon: 'tabler:brand-spotify',
-      href: 'https://open.spotify.com/user/2sw6f4s1ipwy7bqshxeoyrevn?si=0c242994bf654506',
     },
   ],
   footNote: `

@@ -2,11 +2,27 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import { getNews } from '~/utils/news';
+import { astroAsseetsOptimizer, getImagesOptimized } from '~/utils/images-optimization';
 import heroImage from '~/assets/images/hero-2025.png';
 
 const recentNews = await getNews();
 const siteUrl = Astro.site ? Astro.site.toString() : 'https://yas.pub';
 const heroImageUrl = Astro.site ? new URL(heroImage.src, Astro.site).toString() : heroImage.src;
+const heroImageProps = {
+  src: heroImage,
+  alt: 'Yasos!',
+  width: 275,
+  height: 275,
+  widths: [400, 768, 1024, 2040],
+  sizes: '(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px',
+  loading: 'eager',
+  fetchpriority: 'high',
+};
+const heroImagePreload = await getImagesOptimized(heroImage, heroImageProps, astroAsseetsOptimizer);
+const heroImagePreloadSrcset = heroImagePreload.attributes.srcset;
+const heroImagePreloadHref = heroImagePreloadSrcset
+  ? heroImagePreloadSrcset.split(',')[0].trim().split(' ')[0]
+  : heroImagePreload.src;
 const personStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -41,10 +57,17 @@ const metadata = {
 
 <Layout metadata={metadata} bg-color="--aw-color-bg-page">
   <Fragment slot="head">
+    <link
+      rel="preload"
+      as="image"
+      href={heroImagePreloadHref}
+      imagesrcset={heroImagePreload.attributes.srcset}
+      imagesizes={heroImagePreload.attributes.sizes}
+    />
     <script type="application/ld+json" set:html={JSON.stringify(personStructuredData)} />
   </Fragment>
   <Fragment slot="header"> </Fragment>
-  <Hero image={{ src: heroImage, alt: 'Yasos!' }}>
+  <Hero image={heroImageProps}>
     <Fragment slot="title">
       <span class="font-mono">Yarden As</span>
     </Fragment>

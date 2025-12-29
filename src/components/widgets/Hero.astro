@@ -22,6 +22,10 @@ const {
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
 } = Astro.props;
+
+const imageWidth = typeof image === 'object' && image?.width ? Number(image.width) : 275;
+const imageHeight = typeof image === 'object' && image?.height ? Number(image.height) : imageWidth;
+const imageWrapperStyle = image ? `width: ${imageWidth}px; height: ${imageHeight}px;` : undefined;
 ---
 
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
@@ -34,19 +38,25 @@ const {
           {
             image && (
               <div class="relative m-auto max-w-5xl px-5">
-                {typeof image === 'string' ? (
-                  <Fragment set:html={image} />
-                ) : (
-                  <Image
-                    class="mx-auto rounded-full w-full"
-                    widths={[400, 768, 1024, 2040]}
-                    sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                    loading="eager"
-                    width={275}
-                    height={275}
-                    {...image}
-                  />
-                )}
+                <div
+                  class="rounded-full overflow-hidden bg-gray-100 dark:bg-slate-800"
+                  style={imageWrapperStyle}
+                  aria-hidden={typeof image === 'string' ? 'true' : undefined}
+                >
+                  {typeof image === 'string' ? (
+                    <Fragment set:html={image} />
+                  ) : (
+                    <Image
+                      class="mx-auto w-full h-full object-cover"
+                      widths={[400, 768, 1024, 2040]}
+                      sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                      loading="eager"
+                      width={275}
+                      height={275}
+                      {...image}
+                    />
+                  )}
+                </div>
               </div>
             )
           }
