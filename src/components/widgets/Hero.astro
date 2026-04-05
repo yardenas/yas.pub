@@ -25,7 +25,9 @@ const {
 
 const imageWidth = typeof image === 'object' && image?.width ? Number(image.width) : 275;
 const imageHeight = typeof image === 'object' && image?.height ? Number(image.height) : imageWidth;
-const imageWrapperStyle = image ? `width: ${imageWidth}px; height: ${imageHeight}px;` : undefined;
+const imageWrapperStyle = image
+  ? `width: min(100%, ${imageWidth}px); aspect-ratio: ${imageWidth} / ${imageHeight};`
+  : undefined;
 ---
 
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
@@ -33,11 +35,13 @@ const imageWrapperStyle = image ? `width: ${imageWidth}px; height: ${imageHeight
   <div class="relative mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-12 md:py-20">
-      <div class="text-left pb-10 md:pb-16 max-w-5xl mx-auto flex flex-row-reverse justify-between items-center">
-        <div>
+      <div
+        class="text-left pb-10 md:pb-16 max-w-5xl mx-auto flex flex-col gap-8 md:gap-12 md:flex-row-reverse md:justify-between md:items-center"
+      >
+        <div class="flex w-full justify-center md:w-auto md:justify-start md:shrink-0">
           {
             image && (
-              <div class="relative m-auto max-w-5xl px-5">
+              <div class="relative w-full max-w-[275px] md:px-5">
                 <div
                   class="rounded-full overflow-hidden bg-gray-100 dark:bg-slate-800"
                   style={imageWrapperStyle}
@@ -61,7 +65,7 @@ const imageWrapperStyle = image ? `width: ${imageWidth}px; height: ${imageHeight
             )
           }
         </div>
-        <div>
+        <div class="min-w-0 flex-1">
           {
             tagline && (
               <p
@@ -73,7 +77,7 @@ const imageWrapperStyle = image ? `width: ${imageWidth}px; height: ${imageHeight
           {
             title && (
               <h1
-                class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+                class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
                 set:html={title}
               />
             )
