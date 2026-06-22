@@ -121,7 +121,11 @@ const metadata = {
                 return (
                   <li class="news-item">
                     <span class="font-bold">
-                      {item.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                      {item.publishDate.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })}
                     </span>
                     <br />
                     {hasContent && NewsContent ? (

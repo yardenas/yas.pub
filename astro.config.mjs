@@ -11,7 +11,11 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 import tasks from './src/utils/tasks';
 
-import { externalLinksRehypePlugin, readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter.mjs';
+import {
+  externalLinksRehypePlugin,
+  readingTimeRemarkPlugin,
+  responsiveTablesRehypePlugin,
+} from './src/utils/frontmatter.mjs';
 
 import { ANALYTICS, SITE } from './src/utils/config.ts';
 import remarkMath from 'remark-math';
