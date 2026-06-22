@@ -88,9 +88,9 @@ const metadata = {
             exploration.
           </p>
           <p class="text-sm">
-            Beyond research, I co-founded <a href="https://obol.app" class="a-link">Obol</a> and worked as a principal
-            robotics engineer at Temi Robotics. I hold a Master's degree in robotics from ETH Zürich and graduated summa
-            cum laude from Technion.
+            Beyond research, I co-founded <a href="https://obol.app" class="a-link">Obol</a> and worked as a principal robotics
+            engineer at Temi Robotics. I hold a Master's degree in robotics from ETH Zürich and graduated summa cum laude
+            from Technion.
           </p>
           <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">Publications</h3>
           <p class="text-sm">
@@ -114,15 +114,26 @@ const metadata = {
           <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-4">Recent news</h3>
           <ul class="space-y-3 text-sm max-h-96 overflow-y-scroll pr-2 no-scrollbar">
             {
-              recentNews.map((item) => (
-                <li>
-                  <span class="font-bold">
-                    {item.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-                  </span>
-                  <br />
-                  {item.title}
-                </li>
-              ))
+              recentNews.map((item) => {
+                const NewsContent = item.Content;
+                const hasContent = item.content?.trim();
+
+                return (
+                  <li class="news-item">
+                    <span class="font-bold">
+                      {item.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                    </span>
+                    <br />
+                    {hasContent && NewsContent ? (
+                      <div class="news-content">
+                        <NewsContent />
+                      </div>
+                    ) : (
+                      item.title
+                    )}
+                  </li>
+                );
+              })
             }
           </ul>
         </div>
@@ -151,5 +162,18 @@ const metadata = {
   .no-scrollbar::-webkit-scrollbar-thumb {
     background-color: #aaa; /* subtle gray thumb */
     border-radius: 9999px; /* fully rounded */
+  }
+
+  .news-content :global(p) {
+    display: inline;
+    margin: 0;
+  }
+
+  .news-content :global(a) {
+    color: var(--aw-color-primary);
+  }
+
+  .news-content :global(a:hover) {
+    text-decoration: underline;
   }
 </style>

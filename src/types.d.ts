@@ -96,6 +96,8 @@ export interface News {
   /**  */
   title: string;
   /**  */
+  Content?: AstroComponentFactory;
+  content?: string;
 }
 
 export interface MetaData {

@@ -4,11 +4,14 @@ import type { News } from '~/types';
 
 const getNormalizedNews = async (news: CollectionEntry<'news'>): Promise<News> => {
   const { data } = news;
+  const { Content } = await news.render();
   const { publishDate: rawPublishDate = new Date(), title } = data;
   const publishDate = new Date(rawPublishDate);
   return {
     publishDate: publishDate,
     title: title,
+    Content: Content,
+    content: news.body,
   };
 };
 
