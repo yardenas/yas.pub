@@ -53,6 +53,84 @@ const metadata = {
   title: 'Yarden As 🎶',
   ignoreTitleTemplate: true,
 };
+
+const publicationTopics = [
+  {
+    name: 'Reinforcement learning',
+    papers: [
+      {
+        number: 1,
+        title: 'Constrained Policy Optimization via Bayesian World Models',
+        href: 'https://arxiv.org/abs/2201.09802',
+      },
+      {
+        number: 2,
+        title: 'Data-Efficient Task Generalization via Probabilistic Model-based Meta Reinforcement Learning',
+        href: 'https://arxiv.org/abs/2311.07558',
+      },
+      {
+        number: 3,
+        title: 'When to Sense and Control? A Time-adaptive Approach for Continuous-Time RL',
+        href: 'https://arxiv.org/abs/2406.01163',
+      },
+      {
+        number: 4,
+        title: 'When Does Non-Uniform Replay Matter in Reinforcement Learning?',
+        href: 'https://arxiv.org/abs/2605.10236',
+      },
+    ],
+  },
+  {
+    name: 'Safe exploration',
+    papers: [
+      {
+        number: 5,
+        title: 'ActSafe: Active Exploration with Safety Constraints for Reinforcement Learning',
+        href: 'https://arxiv.org/abs/2410.09486',
+      },
+      {
+        number: 6,
+        title: 'Safe Exploration via Policy Priors',
+        href: 'https://arxiv.org/abs/2601.19612',
+      },
+      {
+        number: 7,
+        title: 'Sampling-Based Safe Reinforcement Learning',
+        href: 'https://arxiv.org/abs/2605.19469',
+      },
+    ],
+  },
+  {
+    name: 'Sim-to-real',
+    papers: [
+      {
+        number: 8,
+        title: 'What Matters for Simulation to Online Reinforcement Learning on Real Robots',
+        href: 'https://arxiv.org/abs/2602.20220',
+      },
+      {
+        number: 9,
+        title: 'SPiDR: A Simple Approach for Zero-Shot Safety in Sim-to-Real Transfer',
+        href: 'https://arxiv.org/abs/2509.18648',
+      },
+    ],
+  },
+  {
+    name: 'Stochastic optimization',
+    papers: [
+      {
+        number: 10,
+        title: 'Log Barriers for Safe Black-box Optimization with Application to Safe Reinforcement Learning',
+        href: 'https://arxiv.org/abs/2207.10415',
+      },
+      {
+        number: 11,
+        title: 'Safe-EF: Error Feedback for Nonsmooth Constrained Optimization',
+        href: 'https://arxiv.org/abs/2505.06053',
+      },
+    ],
+  },
+] as const;
 ---
 
 <Layout metadata={metadata} bg-color="--aw-color-bg-page">
@@ -92,27 +170,45 @@ const metadata = {
             engineer at Temi Robotics. I hold a Master's degree in robotics from ETH Zürich and graduated summa cum laude
             from Technion.
           </p>
-          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">Publications</h3>
-          <p class="text-sm">
-            A full list of my publications can be found <a
-              href="https://scholar.google.com/citations?user=Z0qGI_kAAAAJ&hl=en"
-              class="a-link">here</a
-            >.
-          </p>
-          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">Reaching out</h3>
-          <ul class="list-disc list-inside text-sm leading-tight">
-            <li>Email via yardas strudel ethz punkt ch</li>
-            <li>
-              <a href="https://twitter.com/yarden_as" class="a-link" target="_blank">Twitter</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/yardenas/" class="a-link" target="_blank">Linkedin</a>
-            </li>
-          </ul>
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">Research</h3>
+          <div class="space-y-2 text-sm">
+            <ul class="list-disc space-y-1 pl-5 leading-relaxed">
+              {
+                publicationTopics.map((topic) => (
+                  <li>
+                    {topic.name}{' '}
+                    <span class="inline-flex items-baseline whitespace-nowrap">
+                      {'['}
+                      {topic.papers.map((paper, index) => (
+                        <Fragment>
+                          <a
+                            href={paper.href}
+                            class="a-link inline-flex"
+                            aria-label={`Paper ${paper.number}: ${paper.title}`}
+                            title={paper.title}
+                          >
+                            {paper.number}
+                          </a>
+                          {index < topic.papers.length - 1 ? ',\u00a0' : ''}
+                        </Fragment>
+                      ))}
+                      {']'}
+                    </span>
+                  </li>
+                ))
+              }
+            </ul>
+            <p>
+              A full list of my publications can be found <a
+                href="https://scholar.google.com/citations?user=Z0qGI_kAAAAJ&hl=en"
+                class="a-link">here</a
+              >.
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-4">Recent news</h3>
-          <ul class="space-y-3 text-sm max-h-96 overflow-y-scroll pr-2 no-scrollbar">
+        <div class="space-y-4">
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">Recent news</h3>
+          <ul class="max-h-96 space-y-3 overflow-y-scroll pr-2 text-sm no-scrollbar md:max-h-[17rem]">
             {
               recentNews.map((item) => {
                 const NewsContent = item.Content;
@@ -139,6 +235,16 @@ const metadata = {
                 );
               })
             }
+          </ul>
+          <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">Reaching out</h3>
+          <ul class="list-disc list-inside text-sm leading-tight">
+            <li>Email via yardas strudel ethz punkt ch</li>
+            <li>
+              <a href="https://twitter.com/yarden_as" class="a-link" target="_blank">Twitter</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/yardenas/" class="a-link" target="_blank">Linkedin</a>
+            </li>
           </ul>
         </div>
       </div>
