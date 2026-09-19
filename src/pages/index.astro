@@ -3,14 +3,14 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import { getNews } from '~/utils/news';
 import { astroAsseetsOptimizer, getImagesOptimized } from '~/utils/images-optimization';
-import heroImage from '~/assets/images/hero-2025.png';
+import heroImage from '~/assets/images/hero-mountains.png';
 
 const recentNews = await getNews();
 const siteUrl = Astro.site ? Astro.site.toString() : 'https://yas.pub';
 const heroImageUrl = Astro.site ? new URL(heroImage.src, Astro.site).toString() : heroImage.src;
 const heroImageProps = {
   src: heroImage,
-  alt: 'Yasos!',
+  alt: 'Yarden As in the mountains above the clouds',
   width: 275,
   height: 275,
   widths: [400, 768, 1024, 2040],
